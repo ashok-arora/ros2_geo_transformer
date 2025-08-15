@@ -1,10 +1,26 @@
 # Geo Transformer
 
-A ROS 2 package that provides services for converting between **geodetic coordinates** (latitude, longitude, altitude) and **local Cartesian coordinates (x, y, z)**.  
+A ROS 2 package that provides services for converting between **geodetic coordinates** (latitude, longitude, altitude) and **local Cartesian coordinates (x, y, z)** using [GeographicLib](https://index.ros.org/d/geographiclib/).  
 
 This is useful for robotics applications where GPS data needs to be mapped into a local reference frame.
 
 ---
+Table of Content:
+- [Geo Transformer](#geo-transformer)
+  * [Features](#features)
+  * [Services](#services)
+  * [Dependencies](#dependencies)
+  * [Build Instructions](#build-instructions)
+  * [Usage](#usage)
+    + [Expected log output:](#expected-log-output)
+    + [Example Calls](#example-calls)
+  * [Project Structure](#project-structure)
+  * [Docker Support](#docker-support)
+    + [Build Docker Image](#build-docker-image)
+    + [Run Container](#run-container)
+  * [Video Demonstration](#video-demonstration)
+  * [Contributing](#contributing)
+
 
 ## Features
 
@@ -134,6 +150,7 @@ ros2 service call /to_ll geo_transformer_interfaces/srv/ToLL "{x: 10.0, y: 20.0,
 ```
 
 ## Video Demonstration
+[final_recording.webm](https://github.com/user-attachments/assets/be10945b-6cc2-4228-82fe-be5cf8e59ca8)
 
 
 ## Contributing
