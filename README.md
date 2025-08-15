@@ -19,6 +19,7 @@ Table of Content:
     + [Build Docker Image](#build-docker-image)
     + [Run Container](#run-container)
   * [Video Demonstration](#video-demonstration)
+  * [Testing](#testing)
   * [Contributing](#contributing)
 
 
@@ -152,6 +153,30 @@ ros2 service call /to_ll geo_transformer_interfaces/srv/ToLL "{x: 10.0, y: 20.0,
 ## Video Demonstration
 [final_recording.webm](https://github.com/user-attachments/assets/be10945b-6cc2-4228-82fe-be5cf8e59ca8)
 
+## Testing
+
+The tests are written using the gtest framework and can be executed with:
+
+```
+colcon test --packages-select geo_transformer
+./build/geo_transformer/test_geo_transformer --gtest_color=yes
+```
+which should output:
+```
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from GeoTransformerTest
+[ RUN      ] GeoTransformerTest.SetAndGetOrigin
+[       OK ] GeoTransformerTest.SetAndGetOrigin (517 ms)
+[ RUN      ] GeoTransformerTest.RoundTripLL
+[       OK ] GeoTransformerTest.RoundTripLL (508 ms)
+[----------] 2 tests from GeoTransformerTest (1025 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (1025 ms total)
+[  PASSED  ] 2 tests.
+```
 
 ## Contributing
 
